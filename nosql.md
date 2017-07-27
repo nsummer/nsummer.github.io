@@ -61,6 +61,7 @@ eg:
 - Rename Key
 > rename key newkey
 
+eg:
 ```
 > rename a aa
 ```
@@ -68,6 +69,7 @@ eg:
 - Type Key
 > type key
 
+eg:
 ```
 > type a
 ```
@@ -80,6 +82,7 @@ eg:
 > del a
 > del b c
 ```
+
 - Expire Key & TTL Key
 > expire key seconds
 >
@@ -97,7 +100,7 @@ eg:
 >
 > select dbindex
 
-
+eg:
 ```
 > move a 1
 > select 1
@@ -133,6 +136,7 @@ eg:
 - Get Substring
 > getrange key start end
 
+eg:
 ```
 > getrange str1 1 4
 ```
@@ -140,13 +144,15 @@ eg:
 - Set Expired Key
 > setex key seconds value
 
+eg:
 ```
 > setex count 30 100
 ```
 
-- Get length
+- Get Length
 > strlen key
 
+eg:
 ```
 > strlen str1
 ```
@@ -156,6 +162,7 @@ eg:
 >
 > incrby key increment
 
+eg:
 ```
 > incr count
 > incrby count 5
@@ -166,6 +173,7 @@ eg:
 >
 > decrby key decrement
 
+eg:
 ```
 > decr count
 > decrby count 2
@@ -174,6 +182,7 @@ eg:
 - Append Value
 > append key value
 
+eg:
 ```
 > append str1 world!
 ```
@@ -184,6 +193,7 @@ eg:
 > 
 > hmset key field value [field value ...]
 
+eg:
 ```
 > hset user name nancy
 > hmset person name nancy sex female age 18
@@ -202,6 +212,7 @@ eg:
 - Delete
 > hdel key field [field ...]
 
+eg:
 ```
 > hdel person sex age
 ```
@@ -209,6 +220,7 @@ eg:
 - Get Keys
 > hkeys key
 
+eg:
 ```
 > hkeys person
 ```
@@ -216,13 +228,15 @@ eg:
 - Get Values
 > hvals key
 
+eg:
 ```
 > hvals person
 ```
 
-- Get length
+- Get Length
 > hlen key
 
+eg:
 ```
 > hlen person
 ```
@@ -231,19 +245,91 @@ eg:
 3. List
 - Push
 > lpush key value [value ...]
+>
+>rpush key value [value ...]
 
+eg:
 ```
 > lpush numbers 1 2 3 4
+> rpush numbers a b c
 ```
 
-- Range
+- Set
+> lset key index value
+
+eg:
+```
+> lset numbers 1 11
+```
+
+- Insert
+> linsert key before pivot value
+>
+> linsert key after pivot value
+
+eg:
+```
+> linsert numbers before 1 9
+> linsert numbers after a cc
+
+```
+
+- Trim
+> ltrim key start stop
+
+eg:
+```
+> ltrim numbers 1 6
+```
+
+- Get Value | Range
+> lindex key index
+> 
 > lrange key start stop
 
 eg:
 ```
+> lindex numbers 2
 > lrange numbers 0 -1
 
 ```
+
+- Remove
+> lrem key count value
+
+eg:
+```
+> lrem numbers 2 c
+```
+
+- Pop
+> lpop key
+>
+> rpop key
+
+eg:
+```
+> lpop numbers
+> rpop numbers
+```
+
+- Pop to other list
+> rpoplpush source destination
+
+eg:
+```
+> rpoplpush numbers student
+> lrange student
+```
+
+- Get Length
+> llen key
+
+eg:
+```
+> llen numbers
+```
+
 4. Set
 > sadd key member [member ...]
 > smembers key
