@@ -331,14 +331,86 @@ eg:
 ```
 
 4. Set
+- Add
 > sadd key member [member ...]
+
+eg:
+```
+> sadd animals cat dog pig man duck
+```
+
+- Get members
 > smembers key
 
 eg:
 ```
-> sadd animals cat dog pig
 > smembers animals
 ```
+
+- Scan
+> sscan key cursor [MATCH pattern] [COUNT count]
+
+eg:
+```
+> sscan animals 0 match d*
+```
+
+- Pop
+> spop key [count]
+
+eg:
+```
+> spop animals
+> spop animals 2
+```
+
+- Move member to other set
+> smove source destination member
+
+eg:
+```
+> smove animals human man
+```
+
+- Remove
+> srem key member [member ...]
+
+eg:
+```
+> srem animals pig cat
+```
+
+- Get count  of members
+> scard key
+
+eg:
+```
+> scard animals
+```
+
+- Diff
+> sdiff key [key ...]
+> 
+> sdiffstore destination key [key ...]
+
+- Inter
+> sinter key [key ...]
+> 
+> sinterstore  destination key [key ...]
+
+- Union
+> sunion key [key ...]
+> 
+> sunionstore destination key [key ...]
+
+eg:
+```
+> sadd animals cat dog pig man duck
+> sadd human man woman kids old
+> sadd birds parrot durk chick
+
+```
+
 
 5. ZSet(Sorted Set)
 > zadd key score member [score member ...]
