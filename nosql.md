@@ -1,41 +1,39 @@
-# MongoDB Redis <!--Memcached-->
+<h1> MongoDB .VS. Redis <!--Memcached--></h1>
 
 <!-- TOC -->
 
-- [MongoDB Redis <!--Memcached-->](#mongodb-redis---memcached--)
-    - [安装与连接](#安装与连接)
-        - [安装](#安装)
-        - [连接](#连接)
-    - [常用命令](#常用命令)
-    - [Database](#database)
-        - [MongoDB](#mongodb)
-            - [Show Databases](#show-databases)
-            - [Show Current Database](#show-current-database)
-            - [Create Database & Set current database](#create-database--set-current-database)
-            - [Delete Database](#delete-database)
-        - [Redis](#redis)
-            - [Show Databases](#show-databases-1)
-            - [Keys](#keys)
-    - [Data Types](#data-types)
-        - [MongoDB](#mongodb-1)
-            - [Collection](#collection)
-        - [Redis](#redis-1)
-            - [String](#string)
-            - [Hash](#hash)
-            - [List](#list)
-            - [Set](#set)
-            - [ZSet(Sorted Set)](#zsetsorted-set)
-    - [Index](#index)
-        - [MongoDB](#mongodb-2)
-    - [Languages for Nosql](#languages-for-nosql)
-        - [Java](#java)
-            - [Redis](#redis-2)
-    - [CURD](#curd)
-- [](#)
+- [1. Install & Connect](#1-install--connect)
+    - [1.1. Install](#11-install)
+    - [1.2. Connect](#12-connect)
+- [2. CLI Commands](#2-cli-commands)
+- [3. Database](#3-database)
+    - [3.1. MongoDB](#31-mongodb)
+        - [3.1.1. Show Databases](#311-show-databases)
+        - [3.1.2. Show Current Database](#312-show-current-database)
+        - [3.1.3. Create Database & Set current database](#313-create-database--set-current-database)
+        - [3.1.4. Delete Database](#314-delete-database)
+    - [3.2. Redis](#32-redis)
+        - [3.2.1. Show Databases](#321-show-databases)
+        - [3.2.2. Keys](#322-keys)
+- [4. Data Types](#4-data-types)
+    - [4.1. MongoDB](#41-mongodb)
+        - [4.1.1. Collection](#411-collection)
+    - [4.2. Redis](#42-redis)
+        - [4.2.1. String](#421-string)
+        - [4.2.2. Hash](#422-hash)
+        - [4.2.3. List](#423-list)
+        - [4.2.4. Set](#424-set)
+        - [4.2.5. ZSet(Sorted Set)](#425-zsetsorted-set)
+- [5. Index](#5-index)
+    - [5.1. MongoDB](#51-mongodb)
+- [6. Languages for Nosql](#6-languages-for-nosql)
+    - [6.1. Java](#61-java)
+        - [6.1.1. Redis](#611-redis)
+- [7. CURD](#7-curd)
 
 <!-- /TOC -->
-## 安装与连接
-### 安装
+# 1. Install & Connect
+## 1.1. Install
 
 | DB   | Windows | Ubuntu                               | Centos |
 |---------|---------|--------------------------------------|--------|
@@ -44,7 +42,7 @@
 
 <!--| Memcached |         | $ sudo apt install -y  memcached     |        |-->
 
-### 连接
+## 1.2. Connect
 
 | DB   | Command     | Example |
 |---------|-------------|---------|
@@ -53,20 +51,20 @@
 
 <!--| Memcached |         |         |-->
 
-## 常用命令
+# 2. CLI Commands
 
-## Database
-### MongoDB
+# 3. Database
+## 3.1. MongoDB
 
-#### Show Databases
+### 3.1.1. Show Databases
 ```
 > show dbs
 ```
-#### Show Current Database
+### 3.1.2. Show Current Database
 ```
 > db
 ```
-#### Create Database & Set current database
+### 3.1.3. Create Database & Set current database
 > use dbname
 
 eg:
@@ -75,18 +73,18 @@ eg:
 ```
 
 <!--**用show dbs查看所有数据库时刚创建的数据库并不在数据库列表中，需向数据库插入数据才会在列表中显示**-->
-#### Delete Database
+### 3.1.4. Delete Database
 ```
 > db.dropDatabase()
 ```
 
-### Redis
+## 3.2. Redis
 
-#### Show Databases
+### 3.2.1. Show Databases
 ```
 > info keyspace
 ```
-#### Keys
+### 3.2.2. Keys
 - Show Keys
 > keys pattern
 
@@ -144,10 +142,10 @@ eg:
 
 
 
-## Data Types
-### MongoDB
+# 4. Data Types
+## 4.1. MongoDB
 
-#### Collection
+### 4.1.1. Collection
 - Show Collections
 ```
 > show collections
@@ -234,8 +232,8 @@ eg:
 
 
 
-### Redis
-#### String
+## 4.2. Redis
+### 4.2.1. String
 - Set
 > set key value
 >
@@ -312,7 +310,7 @@ eg:
 > append str1 world!
 ```
 
-#### Hash
+### 4.2.2. Hash
 - Set
 > hset key field value
 > 
@@ -367,7 +365,7 @@ eg:
 ```
 
 
-#### List
+### 4.2.3. List
 - Push
 > lpush key value [value ...]
 >
@@ -455,7 +453,7 @@ eg:
 > llen numbers
 ```
 
-#### Set
+### 4.2.4. Set
 - Add
 > sadd key member [member ...]
 
@@ -541,7 +539,7 @@ eg:
 
 ```
 
-#### ZSet(Sorted Set)
+### 4.2.5. ZSet(Sorted Set)
 - Add
 > zadd key score member [score member ...]
 
@@ -598,8 +596,8 @@ eg:
 > zcount student 60 80
 ```
 
-## Index
-### MongoDB
+# 5. Index
+## 5.1. MongoDB
 - Get Index
 > db.collection.getIndexes()
 
@@ -617,9 +615,9 @@ eg:
 3. 
 
 
-## Languages for Nosql
-### Java
-#### Redis
+# 6. Languages for Nosql
+## 6.1. Java
+### 6.1.1. Redis
 - Jedis
 
 eg:
@@ -687,10 +685,8 @@ Jedis jedis = new Jedis("localhost");
         }
 ```
 
-## CURD
+# 7. CURD
 - Create
 - Update
 - Query
 - Delete
-
-##
