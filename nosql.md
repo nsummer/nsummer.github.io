@@ -32,7 +32,7 @@
 ```
 > db
 ```
-3. Create Database
+3. Create Database & Set current database
 > use dbname
 
 eg:
@@ -109,6 +109,82 @@ eg:
 
 
 ## Data Types
+- MongoDB
+1. Collection
+- Show Collections
+```
+> show collections
+```
+
+- Insert
+> db.collection.insert({key,value})
+
+eg:
+```
+> db.num.insert({x:1})
+```
+
+- Update
+> db.collection.update({key:value},{key:newValue})
+> 
+> db.collection.update({key:value},{$set:{key:newValue}},false,true)
+
+eg:
+```
+> db.num.update({x:1},{x:3})
+> db.num.update({c:1},{c:2},false,true)
+```
+
+- Find
+> db.collection.find()
+> 
+> db.collection.find({key:value})
+
+eg:
+```
+> db.num.find()
+> db.num.find({x:1})
+```
+- Skip & Limit
+> db.collection.find().skip(number).limit(number)
+
+eg:
+```
+> db.num.find().skip(2).limint(2)
+```
+
+- Count
+> db.collection.count()
+> 
+> db.collection.find().count({key:value})
+
+eg:
+```
+> db.num.count()
+> db.num.find().count({x:2})
+```
+
+- Sort
+?
+
+- Remove
+> db.collection.remove({key:value})
+
+eg:
+```
+> db.num.remove(x:3)
+```
+
+- Drop Collection
+> db.collection.drop()
+
+eg:
+```
+> db.num.drop()
+```
+
+
+
 - Redis
 1. String
 - Set
@@ -405,26 +481,141 @@ eg:
 
 eg:
 ```
-> sadd animals cat dog pig man duck
-> sadd human man woman kids old
-> sadd birds parrot durk chick
+> sadd set1 a b c 1 2 5
+> sadd set2 c 1 4 7 9
+> sdiff set1 set2
+> sdiffstore setdiff set1 set2
+> sinter set1 set2
+> sinterstore setinter set1 set2
+> sunion set1 set2
+> sunionstore setunion set1 set2
 
 ```
 
-
 5. ZSet(Sorted Set)
+- Add
 > zadd key score member [score member ...]
->
-> zrange key start stop [withscores]
+
 eg:
 ```
 > zadd student 80 nancy 70 tom 99 Jim
-> zrange student 0 -1
-> zrange student 0 -1 withscores
-
 ```
 
-## Table
+- Range
+> zrange key start stop [withscores]
+eg:
+```
+> zrange student 0 -1
+> zrange student 0 -1 withscores
+```
+
+- Score Increment
+> zincrby key increment member 
+
+eg:
+```
+> zrange student 0 -1
+```
+
+- Get Score
+> zscore key member
+
+eg:
+```
+> zscore student tom
+```
+
+- Get member index
+> zrank key member
+
+eg:
+```
+> zrank student tom
+```
+
+- Get member count
+> zcard key
+
+eg:
+```
+> zcard student
+```
+
+- Count member
+> zcount key min max
+
+eg:
+```
+> zcount student 60 80
+```
+
+## Java for Nosql
+1. Redis
+- Jedis
+eg:
+```
+Jedis jedis = new Jedis("127.0.0.1", 6379);
+        jedis.set("name", "nancy");
+        String value = jedis.get("name");
+        System.out.println(value);
+        jedis.close();
+```
+
+- JedisPoolConfig
+eg:
+```
+JedisPoolConfig config = new JedisPoolConfig();
+        config.setMaxTotal(30);
+        config.setMaxIdle(10);
+
+        JedisPool jedisPool = new JedisPool(config, "127.0.0.1", 6379);
+        Jedis jedis = null;
+        try {
+            jedis = jedisPool.getResource();
+            jedis.set("age", "18");
+            String value = jedis.get("age");
+            System.out.println(value);
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (jedis != null) {
+                jedis.close();
+            }
+            if (jedisPool != null) {
+                jedisPool.close();
+            }
+        }
+```
+- List
+eg:
+```
+Jedis jedis = new Jedis("localhost");
+        jedis.lpush("number", "1");
+        jedis.lpush("number", "2");
+        jedis.lpush("number", "3");
+        jedis.lpush("number", "4");
+
+        List<String> list = jedis.lrange("number", 0, -1);
+        for(int i = 0; i < list.size(); i++) {
+            System.out.println(list.get(i));
+        }
+```
+- 
+
+- Keys
+eg:
+```
+Jedis jedis = new Jedis("localhost");
+        Set<String> keys = jedis.keys("*");
+        Iterator<String> iterator = keys.iterator();
+        while (iterator.hasNext()) {
+            String key = iterator.next();
+            System.out.println(key);
+        }
+```
+
+## Index
+1. MongoDB
 
 ## CURD
 - Create
