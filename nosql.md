@@ -1,19 +1,52 @@
 # MongoDB Redis <!--Memcached-->
 
+<!-- TOC -->
 
+- [MongoDB Redis <!--Memcached-->](#mongodb-redis---memcached--)
+    - [安装与连接](#安装与连接)
+        - [安装](#安装)
+        - [连接](#连接)
+    - [常用命令](#常用命令)
+    - [Database](#database)
+        - [MongoDB](#mongodb)
+            - [Show Databases](#show-databases)
+            - [Show Current Database](#show-current-database)
+            - [Create Database & Set current database](#create-database--set-current-database)
+            - [Delete Database](#delete-database)
+        - [Redis](#redis)
+            - [Show Databases](#show-databases-1)
+            - [Keys](#keys)
+    - [Data Types](#data-types)
+        - [MongoDB](#mongodb-1)
+            - [Collection](#collection)
+        - [Redis](#redis-1)
+            - [String](#string)
+            - [Hash](#hash)
+            - [List](#list)
+            - [Set](#set)
+            - [ZSet(Sorted Set)](#zsetsorted-set)
+    - [Index](#index)
+        - [MongoDB](#mongodb-2)
+    - [Languages for Nosql](#languages-for-nosql)
+        - [Java](#java)
+            - [Redis](#redis-2)
+    - [CURD](#curd)
+- [](#)
+
+<!-- /TOC -->
 ## 安装与连接
-- 安装
+### 安装
 
-| Nosql   | Windows | Ubuntu                               | Centos |
+| DB   | Windows | Ubuntu                               | Centos |
 |---------|---------|--------------------------------------|--------|
 | MongoDB |         | $ sudo apt install -y mongodb-server |        |
 | Redis   |         | $ sudo apt install -y redis-server   |        |
 
 <!--| Memcached |         | $ sudo apt install -y  memcached     |        |-->
 
-- 连接
+### 连接
 
-| Nosql   | Command     | Example |
+| DB   | Command     | Example |
 |---------|-------------|---------|
 | MongoDB | $ redis-cli |         |
 | Redis   | $ mongo     |         |
@@ -23,16 +56,17 @@
 ## 常用命令
 
 ## Database
-- MongoDB
-1. Show Databases
+### MongoDB
+
+#### Show Databases
 ```
 > show dbs
 ```
-2. Show Current Database
+#### Show Current Database
 ```
 > db
 ```
-3. Create Database & Set current database
+#### Create Database & Set current database
 > use dbname
 
 eg:
@@ -41,16 +75,18 @@ eg:
 ```
 
 <!--**用show dbs查看所有数据库时刚创建的数据库并不在数据库列表中，需向数据库插入数据才会在列表中显示**-->
-4. Delete Database
+#### Delete Database
 ```
 > db.dropDatabase()
 ```
-- Redis
-1. Show Databases
+
+### Redis
+
+#### Show Databases
 ```
 > info keyspace
 ```
-2. Keys
+#### Keys
 - Show Keys
 > keys pattern
 
@@ -109,11 +145,20 @@ eg:
 
 
 ## Data Types
-- MongoDB
-1. Collection
+### MongoDB
+
+#### Collection
 - Show Collections
 ```
 > show collections
+```
+
+- Create Collection
+> db.createCollection(name,options)
+
+eg:
+```
+> db.createCollection("mycollection")
 ```
 
 - Insert
@@ -122,6 +167,7 @@ eg:
 eg:
 ```
 > db.num.insert({x:1})
+> db.createCollection("person",{"name":"nancy","sex":"female","age":18})
 ```
 
 - Update
@@ -138,11 +184,14 @@ eg:
 - Find
 > db.collection.find()
 > 
+> db.collection.findOne()
+> 
 > db.collection.find({key:value})
 
 eg:
 ```
 > db.num.find()
+> db.num.findOne()
 > db.num.find({x:1})
 ```
 - Skip & Limit
@@ -185,8 +234,8 @@ eg:
 
 
 
-- Redis
-1. String
+### Redis
+#### String
 - Set
 > set key value
 >
@@ -263,7 +312,7 @@ eg:
 > append str1 world!
 ```
 
-2. Hash
+#### Hash
 - Set
 > hset key field value
 > 
@@ -318,7 +367,7 @@ eg:
 ```
 
 
-3. List
+#### List
 - Push
 > lpush key value [value ...]
 >
@@ -406,7 +455,7 @@ eg:
 > llen numbers
 ```
 
-4. Set
+#### Set
 - Add
 > sadd key member [member ...]
 
@@ -492,7 +541,7 @@ eg:
 
 ```
 
-5. ZSet(Sorted Set)
+#### ZSet(Sorted Set)
 - Add
 > zadd key score member [score member ...]
 
@@ -549,9 +598,30 @@ eg:
 > zcount student 60 80
 ```
 
-## Java for Nosql
-1. Redis
+## Index
+### MongoDB
+- Get Index
+> db.collection.getIndexes()
+
+eg:
+```
+> db.num.getIndexes()
+```
+
+- Create Index
+1. ID索引
+
+2. 单键索引
+> 
+
+3. 
+
+
+## Languages for Nosql
+### Java
+#### Redis
 - Jedis
+
 eg:
 ```
 Jedis jedis = new Jedis("127.0.0.1", 6379);
@@ -562,6 +632,7 @@ Jedis jedis = new Jedis("127.0.0.1", 6379);
 ```
 
 - JedisPoolConfig
+
 eg:
 ```
 JedisPoolConfig config = new JedisPoolConfig();
@@ -587,6 +658,7 @@ JedisPoolConfig config = new JedisPoolConfig();
         }
 ```
 - List
+
 eg:
 ```
 Jedis jedis = new Jedis("localhost");
@@ -603,6 +675,7 @@ Jedis jedis = new Jedis("localhost");
 - 
 
 - Keys
+
 eg:
 ```
 Jedis jedis = new Jedis("localhost");
@@ -613,9 +686,6 @@ Jedis jedis = new Jedis("localhost");
             System.out.println(key);
         }
 ```
-
-## Index
-1. MongoDB
 
 ## CURD
 - Create
