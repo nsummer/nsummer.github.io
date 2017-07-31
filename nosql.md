@@ -29,7 +29,9 @@
 - [6. Languages for Nosql](#6-languages-for-nosql)
     - [6.1. Java](#61-java)
         - [6.1.1. Redis](#611-redis)
-- [7. CURD](#7-curd)
+- [7. 高可用](#7-高可用)
+    - [主从复制](#主从复制)
+    - [集群分片](#集群分片)
 
 <!-- /TOC -->
 # 1. Install & Connect
@@ -685,8 +687,7 @@ Jedis jedis = new Jedis("localhost");
         }
 ```
 
-# 7. CURD
-- Create
-- Update
-- Query
-- Delete
+
+# 7. 高可用
+## 主从复制
+## 集群分片
