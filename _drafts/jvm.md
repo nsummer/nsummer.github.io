@@ -1,6 +1,15 @@
 <h1>JVM</h1>
 <!-- TOC -->
 
+- [JVM内部结构](#jvm内部结构)
+    - [Class Loader](#class-loader)
+    - [Runtime Data Area](#runtime-data-area)
+        - [Heap](#heap)
+        - [Method Area](#method-area)
+        - [Java Stack](#java-stack)
+        - [Program COunter](#program-counter)
+    - [Execution Engine](#execution-engine)
+    - [Native Interface](#native-interface)
 - [1. 内存管理机制](#1-内存管理机制)
     - [1.1. 内存区域](#11-内存区域)
     - [1.2. 内存分配](#12-内存分配)
@@ -18,6 +27,18 @@
     - [4.2. 线程](#42-线程)
 
 <!-- /TOC -->
+
+# JVM内部结构
+## Class Loader
+## Runtime Data Area
+### Heap
+### Method Area
+### Java Stack
+### Program COunter
+
+## Execution Engine
+## Native Interface
+
 # 1. 内存管理机制
 ## 1.1. 内存区域
 ## 1.2. 内存分配
