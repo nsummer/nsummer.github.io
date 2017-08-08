@@ -3,36 +3,113 @@
 
 - [1. 基本数据类型](#1-基本数据类型)
 - [2. 变量类型](#2-变量类型)
-- [3. 类和对象](#3-类和对象)
-- [4. 修饰符、运算符](#4-修饰符运算符)
-- [5. 分支与循环语句](#5-分支与循环语句)
-- [6. 常用类](#6-常用类)
-- [7. 数组](#7-数组)
-- [8. 时间日期](#8-时间日期)
-- [9. Stream、Ｆile、IO](#9-streamｆileio)
-    - [9.1. Ｆile](#91-ｆile)
-    - [9.2. IO](#92-io)
-        - [9.2.1. 字节流](#921-字节流)
-        - [9.2.2. 字符流](#922-字符流)
-        - [9.2.3. 内存操作流](#923-内存操作流)
-        - [9.2.4. 管道流](#924-管道流)
-        - [9.2.5. 打印流](#925-打印流)
-        - [9.2.6. 流之间的转换](#926-流之间的转换)
-            - [9.2.6.1. 字节流转字符流](#9261-字节流转字符流)
-- [10. 异常处理](#10-异常处理)
-- [11. 集合框架](#11-集合框架)
-- [12. 泛型](#12-泛型)
-- [13. 反射机制](#13-反射机制)
-- [14. Socket编程](#14-socket编程)
-- [15. 多线程](#15-多线程)
-- [16. Ｓwing](#16-ｓwing)
-- [17. Ａpplet](#17-ａpplet)
-- [18. 序列化](#18-序列化)
-- [19. Lambda](#19-lambda)
+- [3. 修饰符、运算符](#3-修饰符运算符)
+- [4. 分支与循环语句](#4-分支与循环语句)
+- [5. 类和对象](#5-类和对象)
+    - [5.1. 类的定义及特点](#51-类的定义及特点)
+    - [5.2. 内部类](#52-内部类)
+        - [5.2.1. 静态内部类](#521-静态内部类)
+        - [5.2.2. 成员内部类](#522-成员内部类)
+        - [5.2.3. 方法内部类](#523-方法内部类)
+        - [5.2.4. 匿名内部类](#524-匿名内部类)
+- [6. 继承与多态](#6-继承与多态)
+    - [6.1. 继承](#61-继承)
+        - [6.1.1. 继承的概念](#611-继承的概念)
+        - [6.1.2. 继承特性](#612-继承特性)
+        - [6.1.3. 访问修饰符](#613-访问修饰符)
+        - [6.1.4. 实现继承](#614-实现继承)
+            - [6.1.4.1. 单继承](#6141-单继承)
+            - [6.1.4.2. 多层继承](#6142-多层继承)
+        - [6.1.5. super关键字](#615-super关键字)
+    - [6.2. 多态](#62-多态)
+        - [6.2.1. 多态概念](#621-多态概念)
+        - [6.2.2. 实现多态](#622-实现多态)
+            - [6.2.2.1. 子类覆盖父类方法(Override)](#6221-子类覆盖父类方法override)
+            - [6.2.2.2. 同一个类中方法重载(Overload)](#6222-同一个类中方法重载overload)
+            - [6.2.2.3. 子类引用父类实现多态](#6223-子类引用父类实现多态)
+- [7. 抽象类、接口、包](#7-抽象类接口包)
+    - [7.1. 抽象类](#71-抽象类)
+        - [7.1.1. 抽象类定义规则](#711-抽象类定义规则)
+        - [7.1.2. 抽象类实现](#712-抽象类实现)
+    - [7.2. 接口](#72-接口)
+    - [7.3. 接口与抽象类的异同](#73-接口与抽象类的异同)
+        - [7.3.1. 异](#731-异)
+        - [7.3.2. 同](#732-同)
+    - [7.4. 实现接口](#74-实现接口)
+    - [7.5. 用接口实现匿名内部类](#75-用接口实现匿名内部类)
+- [8. 常用类](#8-常用类)
+- [9. 数组](#9-数组)
+- [10. 时间日期](#10-时间日期)
+- [11. Stream、Ｆile、IO](#11-streamｆileio)
+    - [11.1. Ｆile](#111-ｆile)
+    - [11.2. IO](#112-io)
+        - [11.2.1. 字节流](#1121-字节流)
+        - [11.2.2. 字符流](#1122-字符流)
+        - [11.2.3. 内存操作流](#1123-内存操作流)
+        - [11.2.4. 管道流](#1124-管道流)
+        - [11.2.5. 打印流](#1125-打印流)
+        - [11.2.6. 流之间的转换](#1126-流之间的转换)
+            - [11.2.6.1. 字节流转字符流](#11261-字节流转字符流)
+- [12. NIO](#12-nio)
+    - [12.1. Channel、Buffer](#121-channelbuffer)
+    - [12.2. Scatter、Gatter](#122-scattergatter)
+    - [12.3. Selector](#123-selector)
+    - [12.4. NIO VS. IO](#124-nio-vs-io)
+- [13. 异常处理](#13-异常处理)
+- [14. 集合框架](#14-集合框架)
+    - [14.1. 集合体系架构图](#141-集合体系架构图)
+    - [14.2. List](#142-list)
+        - [14.2.1. ArrayList](#1421-arraylist)
+        - [14.2.2. LinkedList](#1422-linkedlist)
+        - [14.2.3. Vector](#1423-vector)
+        - [14.2.4. 遍历](#1424-遍历)
+    - [14.3. Set](#143-set)
+        - [14.3.1. HashSet](#1431-hashset)
+        - [14.3.2. TreeSet](#1432-treeset)
+        - [14.3.3. 遍历](#1433-遍历)
+    - [14.4. Map](#144-map)
+        - [14.4.1. HashMap](#1441-hashmap)
+        - [14.4.2. TreeMap](#1442-treemap)
+        - [14.4.3. 遍历](#1443-遍历)
+- [15. 泛型](#15-泛型)
+    - [15.1. 泛型集合](#151-泛型集合)
+    - [15.2. 泛型方法](#152-泛型方法)
+    - [15.3. 泛型类](#153-泛型类)
+    - [15.4. 泛型通配符](#154-泛型通配符)
+        - [15.4.1. 无界通配符](#1541-无界通配符)
+        - [15.4.2. 上限通配符](#1542-上限通配符)
+        - [15.4.3. 下限通配符](#1543-下限通配符)
+- [16. 反射机制](#16-反射机制)
+    - [16.1. 根据类名或实例得到Class对象](#161-根据类名或实例得到class对象)
+    - [16.2. forName()](#162-forname)
+    - [16.3. Fields](#163-fields)
+    - [16.4. Method](#164-method)
+    - [16.5. Methods](#165-methods)
+    - [16.6. Interfaces](#166-interfaces)
+- [17. Socket编程](#17-socket编程)
+    - [17.1. TCP](#171-tcp)
+        - [17.1.1. 最简单Socket Demo](#1711-最简单socket-demo)
+        - [17.1.2. 加入流处理](#1712-加入流处理)
+        - [17.1.3. 多个客户端访问一个Server端](#1713-多个客户端访问一个server端)
+        - [17.1.4. 加入线程](#1714-加入线程)
+    - [17.2. UDP](#172-udp)
+- [18. 多线程](#18-多线程)
+    - [18.1. 线程基本概念](#181-线程基本概念)
+        - [18.1.1. 进程和线程](#1811-进程和线程)
+    - [18.2. 普通单线程](#182-普通单线程)
+    - [18.3. 多线程实现方式](#183-多线程实现方式)
+        - [18.3.1. 实现Runnable接口](#1831-实现runnable接口)
+        - [18.3.2. 继承Thread类](#1832-继承thread类)
+        - [18.3.3. 临界区](#1833-临界区)
+- [19. GUI](#19-gui)
+    - [19.1. Ｓwing](#191-ｓwing)
+    - [19.2. Ａpplet](#192-ａpplet)
+- [20. 序列化](#20-序列化)
+- [21. Lambda](#21-lambda)
 
 <!-- /TOC -->
 # 1. 基本数据类型
-| 基本类型 | 字节 |
+| 基本类型    | 字节  |
 |---------|-----|
 | byte    | 1   |
 | short   | 2   |
@@ -45,21 +122,470 @@
 
 # 2. 变量类型
 
-# 3. 类和对象
 
-# 4. 修饰符、运算符
+# 3. 修饰符、运算符
 
-# 5. 分支与循环语句
+# 4. 分支与循环语句
 
-# 6. 常用类
+# 5. 类和对象
+## 5.1. 类的定义及特点
+- 类是具有相同字段和方法的一组对象的集合。特点：抽象、封装、继承、多态。
 
-# 7. 数组
+## 5.2. 内部类
+### 5.2.1. 静态内部类
+```java
+public class StaticInnerClass {
+    static int n = 10;
 
-# 8. 时间日期
+    static class InnerClass {
+        int n = 1;
+        public void fun() {
+            n++;
+            System.out.println(n);
+        }
+    }
 
-# 9. Stream、Ｆile、IO
-## 9.1. Ｆile
+
+    public static void main(String[] args) {
+        System.out.println(StaticInnerClass.n);
+
+        StaticInnerClass.InnerClass inner = new StaticInnerClass.InnerClass();
+        inner.fun();
+    }
+}
 ```
+
+
+### 5.2.2. 成员内部类
+```java
+public class Outer {
+    public void display() {
+        Inner inner = new Inner();
+        inner.n = 99;
+        inner.fun();
+    }
+
+    class Inner {
+        int n = 1;
+        public void fun() {
+            n++;
+            System.out.println(n);
+        }
+    }
+
+
+    public static void main(String[] args) {
+
+        Outer outer = new Outer();
+        Inner inner = outer.new Inner();
+
+        inner.n = 6;
+        inner.fun();
+
+        outer.display();
+    }
+}
+```
+
+### 5.2.3. 方法内部类
+```java
+public class MethodClass {
+    public void display() {
+        class Inner {
+            int n = 1;
+            public void fun() {
+                n++;
+                System.out.println(n);
+            }
+        }
+
+        Inner inner = new Inner();
+        inner.n = 99;
+        inner.fun();
+    }
+
+
+
+
+    public static void main(String[] args) {
+
+        MethodClass outer = new MethodClass();
+
+        outer.display();
+    }
+}
+```
+
+### 5.2.4. 匿名内部类
+[用接口实现匿名内部类](URL '用接口实现匿名内部类')
+
+# 6. 继承与多态
+## 6.1. 继承
+### 6.1.1. 继承的概念
+- 
+
+### 6.1.2. 继承特性
+- 子类拥有父类非private的属性，方法。
+- 子类可以扩展自己的属性和方法。
+- 子类可以用自己的方式实现父类的方法。
+- Java的继承是单继承，但是可以多层继承，不能多重继承。
+- 提高了类之间的耦合性。
+
+### 6.1.3. 访问修饰符
+| 访问修饰符     | 类内  | 包内  | 子类  | 全部  |
+|-----------|-----|-----|-----|-----|
+| public    | Y   | Y   | Y   | Y   |
+| protected | Y   | Y   | Y   | N   |
+| default   | Y   | Y   | N   | N   |
+| private   | Y   | N   | N   | N   |
+
+### 6.1.4. 实现继承
+#### 6.1.4.1. 单继承
+- 父类
+```java
+public class Person {
+    public String name;
+    public int age;
+
+    public void say() {
+        System.out.println("I'm " + name + ", I'm " + age + " years old.");
+    }
+}
+```
+
+- 子类
+```java
+public class Student extends Person {
+    public static void main(String[] args) {
+        Student student = new Student();
+
+        student.name = "nancy";
+        student.age = 18;
+        student.say();
+    }
+}
+```
+
+#### 6.1.4.2. 多层继承
+- 父类
+```java
+public class Person {
+    public String name;
+    public int age;
+
+    public void say() {
+        System.out.println("I'm " + name + ", I'm " + age + " years old.");
+    }
+}
+```
+
+- 子类
+```java
+public class Student extends Person {
+    public String sex;
+
+    public void info() {
+        System.out.println(super.name + " " + super.age + " " + sex);
+    }
+
+    public static void main(String[] args) {
+        Student student = new Student();
+
+        student.name = "nancy";
+        student.age = 18;
+        student.sex = "female";
+        student.info();
+    }
+}
+```
+
+- 子孙类
+```java
+public class PrimaryStudent extends Student {
+    public String grade;
+
+    public void info() {
+        System.out.println("Name: "+ super.name + "\nSex: " + sex + "\nAge: " + super.age + "\nGrade: " + grade);
+    }
+
+    public static void main(String[] args) {
+        PrimaryStudent boy = new PrimaryStudent();
+        boy.name = "Tom";
+        boy.age = 8;
+        boy.sex = "male";
+        boy.grade = "3";
+        boy.info();
+    }
+}
+```
+
+### 6.1.5. super关键字
+- 调用父类属性、方法、构造器
+- 若要在子类构造器中调用父类构造器，必须在构造器第一行调用。
+
+## 6.2. 多态
+### 6.2.1. 多态概念
+- 
+
+### 6.2.2. 实现多态
+#### 6.2.2.1. 子类覆盖父类方法(Override)
+- 方法名、返回类型相同，参数个数、类型相同，方法内容不同。
+- 父类
+```java
+public class Person {
+    public String name;
+    public int age;
+
+    public void say() {
+        System.out.println("I'm " + name + ", I'm " + age + " years old.");
+    }
+}
+
+```
+
+- 子类
+```java
+public class Teacher extends Person {
+    public String sex;
+    public String course;
+
+    @Override
+    public void say() {
+        System.out.println("I'm your " + course + " teacher, You can call me Mr " + super.name + ".");
+    }
+
+    public static void main(String[] args) {
+        Teacher teacher = new Teacher();
+        teacher.name = "Lee";
+        teacher.age = 28;
+        teacher.sex = "male";
+        teacher.course = "Math";
+        teacher.say();
+
+    }
+}
+```
+
+#### 6.2.2.2. 同一个类中方法重载(Overload)
+- 方法名相同，其它不同。
+```java
+public class Add {
+    public int operate(int a, int b) {
+        return a + b;
+    }
+
+    public double operate(double a, double b) {
+        return a + b;
+    }
+
+    public long operate(long a, long b) {
+        return a + b;
+    }
+
+    public String operate(String a, String b, String c) {
+        return a + b + c;
+    }
+
+    public static void main(String[] args) {
+        Add add = new Add();
+        System.out.println(add.operate(1, 2));
+        System.out.println(add.operate(4.5, 5.6));
+        System.out.println(add.operate(122222, 222222222));
+        System.out.println(add.operate("a", "b", "c"));
+    }
+}
+```
+
+#### 6.2.2.3. 子类引用父类实现多态
+- 父类
+```java
+public class Person {
+    public String name;
+    public int age;
+
+    public void say() {
+        System.out.println("I'm " + name + ", I'm " + age + " years old.");
+    }
+}
+```
+
+- 子类
+```java
+public class Student extends Person {
+    public String sex;
+
+    public void info() {
+        System.out.println(super.name + " " + super.age + " " + sex);
+    }
+}
+```
+
+- 测试类
+```java
+public class Test {
+    public static void main(String[] args) {
+        Person person1 = new Person();
+        Person person2 = new Student();
+
+        person1.name = "Tom";
+        person1.age = 19;
+
+        person2.name = "Nancy";
+        person2.age = 18;
+
+        person1.say();
+        person2.say();
+    }
+}
+```
+
+# 7. 抽象类、接口、包
+## 7.1. 抽象类
+### 7.1.1. 抽象类定义规则
+- 类和方法必须用abstract修饰。
+- 抽象类不能被实例化。
+- 抽象方法只需声明不需实现。
+- 含有抽象方法的类必须用abstract修饰，子类必须覆盖所有抽象方法才能被实例化。
+- 抽象类中可以有被实现的方法。
+- 抽象类含有构造器。
+
+### 7.1.2. 抽象类实现
+- 抽象类
+```java
+public abstract class Person {
+    public String name;
+    public int age;
+
+    public Person() {
+
+    }
+
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    public abstract void say();
+
+    public void info() {
+        System.out.println("Name: " + name + "\nAge: " + age);
+    }
+}
+```
+
+- 实现类
+```java
+public class Student extends Person {
+
+    @Override
+    public void say() {
+        System.out.println("I'm " + name + ", I'm " + age + " years old.");
+    }
+
+
+    public static void main(String[] args) {
+        Student student = new Student();
+
+        student.name = "Nancy";
+        student.age = 18;
+        student.say();
+        student.info();
+    }
+}
+```
+
+## 7.2. 接口
+## 7.3. 接口与抽象类的异同
+### 7.3.1. 异
+- 成员属性均为常量，必须初始化，可省略final修饰符。
+- 必须全部是抽象方法, 可省略abstract修饰符， 默认为抽象方法。
+
+### 7.3.2. 同
+- 都用来做模板类
+
+## 7.4. 实现接口
+- 接口
+```java
+public interface Cat {
+    public int feet = 4;
+    public int eyes = 2;
+
+    public void say();
+    public void info();
+}
+```
+
+- 实现类
+```java
+public class WildCat implements Cat{
+    public String color;
+
+    @Override
+    public void say() {
+        System.out.println(color + " Cat say: miao~");
+    }
+
+    @Override
+    public void info() {
+        System.out.println("It has " + feet + " feet, " + eyes + " eyes.");
+    }
+
+    public static void main(String[] args) {
+        WildCat cat = new WildCat();
+        cat.color = "White";
+        cat.say();
+        cat.info();
+    }
+}
+```
+
+## 7.5. 用接口实现匿名内部类
+- 接口
+```java
+public interface Dog {
+    public int feet = 4;
+    public int eyes = 2;
+
+    public void info();
+}
+
+```
+
+- 匿名内部类
+```java
+public class Test {
+    public static void foo(Dog dog) {
+        dog.info();
+    }
+
+    public static void main(String[] args) {
+        Dog wildCat = new Dog() {
+
+            @Override
+            public void info() {
+                System.out.println("It has " + feet + " feet, " + eyes + " eyes.");
+            }
+        };
+
+        foo(new Dog() {
+            @Override
+            public void info() {
+                System.out.println("It has " + feet + " feet, " + eyes + " eyes.");
+            }
+        });
+    }
+}
+```
+
+# 8. 常用类
+
+# 9. 数组
+
+# 10. 时间日期
+
+# 11. Stream、Ｆile、IO
+## 11.1. Ｆile
+```java
 public class FileDemo {
     public static void main(String[] args) {
         File dir = new File("temp");
@@ -78,9 +604,9 @@ public class FileDemo {
     }
 }
 ```
-## 9.2. IO
-### 9.2.1. 字节流
-```
+## 11.2. IO
+### 11.2.1. 字节流
+```java
 public class FileInputStreamDemo {
     public static void main(String[] args) throws IOException {
         File file = new File("temp/test2.txt");
@@ -104,8 +630,8 @@ public class FileInputStreamDemo {
 }
 ```
 
-### 9.2.2. 字符流
-```
+### 11.2.2. 字符流
+```java
 public class WriterDemo {
 
     public static void main(String[] args) throws IOException {
@@ -126,8 +652,8 @@ public class WriterDemo {
 }
 ```
 
-### 9.2.3. 内存操作流
-```
+### 11.2.3. 内存操作流
+```java
 public class ByteArrayDemo {
     public static void main(String[] arg) throws IOException {
         String str = "hello world";
@@ -149,15 +675,15 @@ public class ByteArrayDemo {
 }
 ```
 
-### 9.2.4. 管道流
+### 11.2.4. 管道流
 ```
 
 ```
 
-### 9.2.5. 打印流
-### 9.2.6. 流之间的转换
-#### 9.2.6.1. 字节流转字符流
-```
+### 11.2.5. 打印流
+### 11.2.6. 流之间的转换
+#### 11.2.6.1. 字节流转字符流
+```java
 public class OutputStreamToWriter {
     public static void main(String[] args) throws IOException {
         File file = new File("temp/test4.txt");
@@ -171,24 +697,691 @@ public class OutputStreamToWriter {
 }
 ```
 
+# 12. NIO
+## 12.1. Channel、Buffer
+
+| Buffer常用方法 | 描述                                                             |
+|------------|----------------------------------------------------------------|
+| flip()     | 把buffer从写模式调整为读模式。调用flip方法会把position归零，并设置limit为之前的position的值。 |
+| clear()    | 清空整个buffer。重置position为0，limit为capacity。                        |
+| compact()  | 只清空已读取的数据                                                      |
+
+```java
+public class ChannelDemo {
+
+    public static void main(String[] args) throws IOException {
+        RandomAccessFile randomAccessFile = new RandomAccessFile("temp/test.txt", "rw");
+        FileChannel fileChannel = randomAccessFile.getChannel();
+
+        ByteBuffer buf = ByteBuffer.allocate(48);
+
+        int bytesRead = fileChannel.read(buf);
+        while (bytesRead != -1) {
+            buf.flip();
+
+            while(buf.hasRemaining()){
+                System.out.print((char) buf.get());
+            }
+
+            buf.clear();
+            bytesRead = fileChannel.read(buf);
+        }
+        randomAccessFile.close();
+    }
+
+}
+```
+## 12.2. Scatter、Gatter
+## 12.3. Selector
+## 12.4. NIO VS. IO
 
 
-# 10. 异常处理
+# 13. 异常处理
 
-# 11. 集合框架
+# 14. 集合框架
+## 14.1. 集合体系架构图
 
-# 12. 泛型
+## 14.2. List
+### 14.2.1. ArrayList
+```java
+public class MyArrayList {
+    public static void main(String[] args) {
+        ArrayList arr = new ArrayList();
+        arr.add("aa");
+        arr.add("bb");
+        arr.add("cc");
+        arr.add("dd");
 
-# 13. 反射机制
+        System.out.println(arr);
 
-# 14. Socket编程
+        arr.remove(1);
+        arr.remove("aa");
 
-# 15. 多线程
+        System.out.println(arr);
+    }
+}
+```
 
-# 16. Ｓwing
+### 14.2.2. LinkedList
+```java
+public class MyLinkedList {
+    public static void main(String[] args) {
+        LinkedList list = new LinkedList();
+        list.add("aa");
+        list.add("bb");
+        list.add("cc");
 
-# 17. Ａpplet
+        list.addFirst("f");
+        list.addLast("l");
 
-# 18. 序列化
+        System.out.println(list);
 
-# 19. Lambda
+        list.remove("aa");
+        list.removeFirst();
+        list.removeLast();
+
+        System.out.println(list);
+    }
+}
+```
+
+### 14.2.3. Vector
+```java
+public class MyVector {
+    public static void main(String[] args) {
+        Vector vector = new Vector();
+        vector.add("aa");
+        vector.add("bb");
+        vector.add("cc");
+
+        vector.remove("cc");
+
+        System.out.println(vector);
+    }
+}
+```
+
+### 14.2.4. 遍历
+- for、foreach、Iterator三种遍历方式
+```java
+public class Test {
+    public static void main(String[] args) {
+        ArrayList arr = new ArrayList();
+        arr.add("aa");
+        arr.add("bb");
+        
+        //for循环遍历
+        for (int i = 0; i < arr.size(); i++) {
+            System.out.print(arr.get(i) + " ");
+        }
+        System.out.println();
+
+        //foreach遍历
+        for (Object item : arr) {
+            System.out.print(item + " ");
+        }
+        System.out.println();
+
+        //迭代器遍历
+        Iterator iterator =  arr.iterator();
+        while (iterator.hasNext()) {
+            System.out.print(iterator.next() + " ");
+        }
+    }
+}
+```
+
+## 14.3. Set
+### 14.3.1. HashSet
+
+### 14.3.2. TreeSet
+
+### 14.3.3. 遍历
+
+## 14.4. Map
+### 14.4.1. HashMap
+
+### 14.4.2. TreeMap
+
+### 14.4.3. 遍历
+
+
+
+# 15. 泛型
+## 15.1. 泛型集合
+```java
+public class GenericCollectionDemo {
+    public static void main(String[] args) {
+        List<String> list = new ArrayList<>();
+        list.add("aa");
+        list.add("bb");
+
+        System.out.println(list);
+
+        Map<String, Integer> map = new HashMap<>();
+
+        map.put("cat", 4);
+        map.put("dog", 4);
+        map.put("chickey", 2);
+
+        System.out.println(map);
+    }
+}
+```
+
+## 15.2. 泛型方法
+```java
+public class GenericMethodDemo {
+    public <T> void fun(T[] arr) {
+        for (T element : arr) {
+            System.out.print(element + " ");
+        }
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+        Integer[] arr1 = {1, 3, 4, 5, 6};
+        String[] arr2 = {"aa", "bb", "dd"};
+        Float[] arr3 = {23.6f, 74.5f, 66f};
+
+        GenericMethodDemo genericMethodDemo = new GenericMethodDemo();
+        genericMethodDemo.fun(arr1);
+        genericMethodDemo.fun(arr2);
+        genericMethodDemo.fun(arr3);
+    }
+}
+```
+
+## 15.3. 泛型类
+```java
+public class GenericClassDemo<T> {
+    private T t;
+
+    public T getT() {
+        return t;
+    }
+
+    public void setT(T t) {
+        this.t = t;
+    }
+
+    public static void main(String[] args) {
+        GenericClassDemo<String> name = new GenericClassDemo<>();
+        name.setT("nancy");
+
+        GenericClassDemo<Integer> age = new GenericClassDemo<>();
+        age.setT(18);
+
+        System.out.println(name.getT() + ": " + age.getT());
+    }
+}
+```
+
+## 15.4. 泛型通配符
+### 15.4.1. 无界通配符
+```java
+public class GlobStringGenericDemo {
+    public void fun(List<?> arr) {
+        for (int i = 0; i < arr.size(); i++) {
+            System.out.print(arr.get(i) + " ");
+        }
+    }
+
+    public static void main(String[] args) {
+        List<String> list1 = new ArrayList<>();
+
+        list1.add("aa");
+        list1.add("bb");
+        list1.add("cc");
+
+        List<Integer> list2 = new ArrayList<>();
+
+        list2.add(1);
+        list2.add(2);
+        list2.add(3);
+
+        GlobStringGenericDemo globStringGeneric = new GlobStringGenericDemo();
+        globStringGeneric.fun(list2);
+    }
+}
+```
+
+### 15.4.2. 上限通配符
+```java
+public class GenericExtendsDemo<K extends Number, V> {
+    public HashMap<K, V> hashMap = new HashMap<>();
+
+    public void put(K key, V value) {
+        hashMap.put(key, value);
+    }
+
+    public V get(K key) {
+        return hashMap.get(key);
+    }
+
+    public static void main(String[] args) {
+        GenericExtendsDemo<Integer, String> genericExtend1 = new GenericExtendsDemo<>();
+        genericExtend1.put(1, "aa");
+        System.out.println(genericExtend1.get(1));
+
+        GenericExtendsDemo<Long, String> genericExtend2 = new GenericExtendsDemo<>();
+        genericExtend2.put(1L, "aaaaa");
+        System.out.println(genericExtend2.get(1L));
+    }
+}
+```
+
+### 15.4.3. 下限通配符
+```java
+public class GenericSuperDemo {
+    public static void main(String[] args) {
+        List<? super Number> list = new ArrayList<>();
+
+        list.add(3);
+        list.add(3.14f);
+
+        System.out.println(list);
+    }
+}
+```
+
+# 16. 反射机制
+## 16.1. 根据类名或实例得到Class对象
+```java
+public class Demo {
+    public static void main(String[] args) {
+        System.out.println(Object.class);
+        System.out.println(String.class);
+        System.out.println(Integer.class);
+        System.out.println(Boolean.class);
+        System.out.println(Long.class);
+        System.out.println(int.class);
+        System.out.println(char.class);
+
+
+        Integer num = 10;
+        Boolean flag = true;
+        System.out.println("hello".getClass());
+        System.out.println(num.getClass());
+        System.out.println(flag.getClass());
+    }
+}
+```
+
+## 16.2. forName()
+```java
+public class Demo2 {
+    public static void main(String[] args) throws Exception {
+        Class clazz = Class.forName("com.company.reflection.Test");
+        Constructor<?>[] constructors = clazz.getConstructors();
+
+        //Test test = (Test) clazz.newInstance();
+        Test test = (Test) constructors[0].newInstance();
+
+        test.show();
+        System.out.println(test.a);
+    }
+}
+```
+
+## 16.3. Fields
+```java
+public class Demo3 {
+    public static void main(String[] args) throws ClassNotFoundException {
+        Class clazz = Class.forName("com.company.reflection.Test");
+        Constructor<?>[] constructors = clazz.getConstructors();
+
+        Field[] fields = clazz.getDeclaredFields();
+        for (int i = 0; i < fields.length; i++) {
+            System.out.println("类中的成员: " + fields[i]);
+        }
+    }
+}
+```
+
+## 16.4. Method
+```java
+public class Demo6 {
+    public static void main(String[] args) throws Exception {
+        Class clazz = Class.forName("com.company.reflection.Test");
+        Constructor<?>[] constructors = clazz.getConstructors();
+
+        Method method = clazz.getMethod("show");
+        System.out.println("调用有参方法walk(int m)：");
+        method.invoke(clazz.newInstance());
+    }
+}
+```
+
+## 16.5. Methods
+```java
+public class Demo4 {
+    public static void main(String[] args) throws ClassNotFoundException {
+        Class clazz = Class.forName("com.company.reflection.Test");
+        Constructor<?>[] constructors = clazz.getConstructors();
+
+        Method[] methods = clazz.getDeclaredMethods();
+        for (int i = 0; i < methods.length; i++) {
+            System.out.println("函数名：" + methods[i].getName());
+            System.out.println("函数返回类型：" + methods[i].getReturnType());
+            System.out.println("函数访问修饰符：" + Modifier.toString(methods[i].getModifiers()));
+            System.out.println("函数代码写法： " + methods[i]);
+        }
+    }
+}
+```
+
+## 16.6. Interfaces
+```java
+public class Demo5 {
+    public static void main(String[] args) throws ClassNotFoundException {
+        Class clazz = Class.forName("com.company.reflection.Test");
+        Constructor<?>[] constructors = clazz.getConstructors();
+
+        Class<?> interfaces[] = clazz.getInterfaces();
+        for (int i = 0; i < interfaces.length; i++) {
+            System.out.println("实现的接口类名: " + interfaces[i].getName() );
+        }
+    }
+}
+```
+
+
+# 17. Socket编程
+## 17.1. TCP
+### 17.1.1. 最简单Socket Demo
+- Server
+```java
+public class Server {
+
+    public static void main(String[] args) throws IOException, InterruptedException {
+        ServerSocket serverSocket = new ServerSocket(9990);
+
+        for (int i = 0; i < 5; i++) {
+            Socket sock = serverSocket.accept();
+            System.out.println(sock);
+            Thread.sleep(5000);
+            sock.close();
+        }
+
+        serverSocket.close();
+    }
+
+}
+```
+
+- Client
+```java
+public class Client {
+    public static void main(String[] args) throws IOException {
+        Socket clientSocket = new Socket("localhost", 9990);
+        clientSocket.close();
+    }
+}
+```
+
+### 17.1.2. 加入流处理
+- Server
+```java
+public class Server {
+    public static void main(String[] args) throws IOException {
+        ServerSocket serverSocket = new ServerSocket(20006);
+        Socket client = null;
+
+        while (true) {
+            client = serverSocket.accept();
+            System.out.println("客户端连接成功！");
+
+            try {
+                PrintStream out = new PrintStream(client.getOutputStream());
+                BufferedReader buf = new BufferedReader(new InputStreamReader(client.getInputStream()));
+
+                boolean flag = true;
+                while (flag) {
+                    String str = buf.readLine();
+                    if (str == null || "" .equals(str)) {
+                        flag = false;
+                    } else {
+                        if ("bye".equals(str)) {
+                            flag = false;
+                        } else {
+                            out.println("echo:" + str);
+                        }
+                    }
+                }
+
+                out.close();
+                client.close();
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            if (1 > 2) break;
+        }
+        serverSocket.close();
+    }
+}
+```
+
+- Client
+```java
+public class Client {
+
+    public static void main(String[] args) throws IOException {
+        Socket client = new Socket("localhost", 20006);
+        client.setSoTimeout(10000);
+
+        BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
+        PrintStream out = new PrintStream(client.getOutputStream());
+
+        BufferedReader buf = new BufferedReader(new InputStreamReader(client.getInputStream()));
+
+        boolean flag = true;
+        while (flag) {
+            System.out.print("输入信息: ");
+            String str = input.readLine();
+
+            out.println(str);
+
+            if ("bye".equals(str)) {
+                flag = false;
+            } else {
+                try {
+                    String echo = buf.readLine();
+                    System.out.println(echo);
+                } catch (SocketException e) {
+                    System.out.println("Time out");
+                }
+            }
+        }
+        input.close();
+        if (client != null) {
+            client.close();
+        }
+
+    }
+}
+```
+
+### 17.1.3. 多个客户端访问一个Server端
+- 在第二个例子的情况下，再copy一个Client，访问Server端。先连上的Client端可以访问Server，后连上的Server会Timeout。解决这个问题需要在Server端加上Tread，开启多个线程处理多个Client发来的请求。
+
+### 17.1.4. 加入线程
+- Server
+```java
+public class Server {
+    public static void main(String[] args) throws IOException {
+        ServerSocket serverSocket = new ServerSocket(20006);
+        Socket client = null;
+        boolean flag = true;
+
+        while (flag) {
+            client = serverSocket.accept();
+            System.out.println("客户端连接成功！");
+
+            new Thread(new ServerTread(client)).start();
+        }
+        serverSocket.close();
+    }
+}
+```
+
+- Client
+```java
+public class Client {
+
+    public static void main(String[] args) throws IOException {
+        Socket client = new Socket("localhost", 20006);
+        client.setSoTimeout(10000);
+
+        BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
+        PrintStream out = new PrintStream(client.getOutputStream());
+
+        BufferedReader buf = new BufferedReader(new InputStreamReader(client.getInputStream()));
+
+        boolean flag = true;
+        while (flag) {
+            System.out.print("输入信息: ");
+            String str = input.readLine();
+
+            out.println(str);
+
+            if ("bye".equals(str)) {
+                flag = false;
+            } else {
+                try {
+                    String echo = buf.readLine();
+                    System.out.println(echo);
+                } catch (SocketException e) {
+                    System.out.println("Time out");
+                }
+            }
+        }
+        input.close();
+        if (client != null) {
+            client.close();
+        }
+
+    }
+}
+```
+
+- Tread
+```java
+public class ServerTread implements Runnable {
+
+    private Socket client = null;
+
+    public ServerTread(Socket client) {
+        this.client = client;
+    }
+
+    @Override
+    public void run() {
+        try {
+            PrintStream out = new PrintStream(client.getOutputStream());
+            BufferedReader buf = new BufferedReader(new InputStreamReader(client.getInputStream()));
+
+            Boolean flag = true;
+            while (flag) {
+                String str = buf.readLine();
+                if (str == null || "" .equals(str)) {
+                    flag = false;
+                } else {
+                    if ("bye".equals(str)) {
+                        flag = false;
+                    } else {
+                        out.println("echo:" + str);
+                    }
+                }
+            }
+
+            out.close();
+            client.close();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+}
+```
+
+## 17.2. UDP
+
+
+# 18. 多线程
+## 18.1. 线程基本概念
+### 18.1.1. 进程和线程
+
+
+## 18.2. 普通单线程
+```java
+public class Demo {
+    public void run() {
+        for (int i = 0; i < 10; i++) {
+            System.out.println(Thread.currentThread().getName() + ": " + i);
+        }
+    }
+
+    public static void main(String[] args) {
+        Demo thread = new Demo();
+
+        thread.run();
+    }
+}
+```
+
+## 18.3. 多线程实现方式
+### 18.3.1. 实现Runnable接口
+```java
+public class RunnableDemo implements  Runnable {
+    @Override
+    public void run() {
+        System.out.println(Thread.currentThread().getName());
+    }
+
+    public static void main(String[] args) {
+        RunnableDemo t1 = new RunnableDemo();
+        RunnableDemo t2 = new RunnableDemo();
+
+        Thread thread1 = new Thread(t1, "mythread1");
+        Thread thread2 = new Thread(t2);
+        thread2.setName("mythread2");
+        thread1.start();
+        thread2.start();
+    }
+}
+```
+
+### 18.3.2. 继承Thread类
+```java
+public class ThreadDemo extends Thread{
+    @Override
+    public void run() {
+        System.out.println(Thread.currentThread().getName());
+    }
+
+    public static void main(String[] args) {
+        ThreadDemo thread1 = new ThreadDemo();
+        ThreadDemo thread2 = new ThreadDemo();
+        thread1.setName("mythread1");
+        thread2.setName("mythread2");
+        thread1.start();
+        thread2.start();
+    }
+}
+```
+
+### 18.3.3. 临界区
+- 
+
+# 19. GUI
+## 19.1. Ｓwing
+
+## 19.2. Ａpplet
+
+# 20. 序列化
+
+# 21. Lambda
