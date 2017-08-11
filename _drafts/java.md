@@ -833,19 +833,152 @@ public class Test {
 
 ## 14.3. Set
 ### 14.3.1. HashSet
+```java
+public class MyHashSet {
+    public static void main(String[] args) {
+        HashSet set = new HashSet();
+        set.add("aa");
+        set.add("bb");
+        set.add("cc");
+        set.add("dd");
+
+        System.out.println(set);
+
+        set.remove("aa");
+        set.remove(2);
+
+        System.out.println(set);
+    }
+}
+```
 
 ### 14.3.2. TreeSet
+```java
+public class MyTreeSet {
+    public static void main(String[] args) {
+        TreeSet set = new TreeSet();
+        set.add(10);
+        set.add(6);
+        set.add(4);
+        set.add(19);
+        set.add(9);
+
+        System.out.println(set);
+
+        set.remove(4);
+
+        System.out.println(set);
+        System.out.println(set.first());
+        System.out.println(set.last());
+    }
+}
+```
 
 ### 14.3.3. 遍历
+- for循环遍历、迭代器遍历
+```java
+public class SetTest {
+    public static void main(String[] args) {
+        HashSet set = new HashSet();
+        set.add("aa");
+        set.add("bb");
+
+        TreeSet treeSet = new TreeSet();
+        treeSet.add(1);
+        treeSet.add(5);
+        treeSet.add(2);
+
+        //for循环遍历
+        for (Object item : set) {
+            System.out.print(item + " ");
+        }
+        System.out.println();
+
+        //迭代器
+        Iterator iterator = set.iterator();
+        while (iterator.hasNext()) {
+            System.out.print(iterator.next() + " ");
+        }
+    }
+}
+```
 
 ## 14.4. Map
 ### 14.4.1. HashMap
+```java
+public class MyHashMap {
+    public static void main(String[] args) {
+        HashMap map = new HashMap();
+
+        map.put("a", 11);
+        map.put("b", 12);
+        map.put("c", 33);
+
+        System.out.println(map);
+
+        map.remove("b");
+
+        System.out.println(map);
+    }
+}
+```
 
 ### 14.4.2. TreeMap
+```java
+public class MyTreeMap {
+    public static void main(String[] args) {
+        TreeMap map = new TreeMap();
+
+        map.put("a", 1);
+        map.put("b", 2);
+        map.put("c", 3);
+
+        System.out.println(map);
+
+        map.remove("c");
+
+        System.out.println(map);
+    }
+}
+```
 
 ### 14.4.3. 遍历
+- keySet遍历、entrySet遍历、迭代器遍历、遍历value（不能获取到key）
+```java
+public class MapTest {
+    public static void main(String[] args) {
+        HashMap<String, Integer> hashMap = new HashMap<>();
+        hashMap.put("a", 11);
+        hashMap.put("b", 22);
 
+        //keySet遍历
+        for (Object key : hashMap.keySet()) {
+            System.out.print(key + ":" + hashMap.get(key) + " ");
+        }
+        System.out.println();
 
+        //entrySet遍历
+        for (Map.Entry<String, Integer> entry : hashMap.entrySet()) {
+            System.out.print(entry.getKey() + ":" + entry.getValue() + " ");
+        }
+        System.out.println();
+
+        //迭代器遍历
+        Iterator<Map.Entry<String, Integer>> iterator = hashMap.entrySet().iterator();
+        while (iterator.hasNext()) {
+            Map.Entry<String, Integer> entry = iterator.next();
+
+            System.out.print(entry.getKey() + ":" + entry.getValue() + " ");
+        }
+        System.out.println();
+
+        //遍历value，不能获取到key
+        for (Integer value : hashMap.values()) {
+            System.out.println(value);
+        }
+    }
+}
+```
 
 # 15. 泛型
 ## 15.1. 泛型集合
