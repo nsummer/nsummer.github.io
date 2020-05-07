@@ -1,8 +1,6 @@
 <h1> Doker </h1>
 
-<!-- TOC -->
-
-- [1. Overview](#1-overview)
+- [1. 简介](#1-%e7%ae%80%e4%bb%8b)
 - [2. CLI](#2-cli)
   - [2.1. Common commands](#21-common-commands)
 - [3. Dockerfile](#3-dockerfile)
@@ -42,9 +40,8 @@
 - [10. Cloud](#10-cloud)
 - [11. Operations and monitoring(运维和监控)](#11-operations-and-monitoring%e8%bf%90%e7%bb%b4%e5%92%8c%e7%9b%91%e6%8e%a7)
 
-<!-- /TOC -->
+# 1. 简介
 
-# 1. Overview
 
 # 2. CLI
 
@@ -57,6 +54,18 @@ docker image rm(docker rmi)
 ```
 
 # 3. Dockerfile
+|  Command | Description  |
+|---|---|
+|  FROM |  指定基础镜像 |
+|  MAINTAINER |  指定作者 |
+| USER | 指定用户 |
+| RUN | 执行参数中定义的命令 |
+| EXPOSE | 向容器外部开放端口号 |
+| WORKDIR | 设置容器内默认工作目录 |
+| ENTROYPOINT | 启动时运行的命令 |
+| ENV | 设置环境变量 |
+| ADD/COPY | 复制文件到镜像中 |
+| VOLUME | 容器添加卷盘 |  
 
 ## 3.1. FROM
 

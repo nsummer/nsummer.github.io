@@ -1,66 +1,70 @@
 <h1> k8s </h1>
 
-<!-- TOC -->
-
 - [1. Overview](#1-overview)
-- [2. User Interface](#2-user-interface)
-  - [2.1. UI](#21-ui)
-  - [2.2. CLI](#22-cli)
-- [3. build](#3-build)
-  - [3.1. Kubeadm](#31-kubeadm)
-  - [3.2. Kops](#32-kops)
-  - [3.3. Tectonic](#33-tectonic)
-- [4. Image Registry](#4-image-registry)
-- [5. Master Node](#5-master-node)
-  - [5.1. API Server](#51-api-server)
-  - [5.2. Scheduler](#52-scheduler)
-  - [5.3. Controller](#53-controller)
-  - [5.4. etcd](#54-etcd)
-- [6. Worker Node](#6-worker-node)
-  - [6.1. Pod](#61-pod)
-  - [6.2. Docker](#62-docker)
-  - [6.3. Kube-proxy](#63-kube-proxy)
-  - [6.4. Fluentd](#64-fluentd)
-- [7. Kubelet](#7-kubelet)
-- [8. Deployments](#8-deployments)
-- [9. Services](#9-services)
-  - [9.1. ClusterIP](#91-clusterip)
-  - [9.2. NodePort](#92-nodeport)
-  - [9.3. LoadBalancer](#93-loadbalancer)
-
-<!-- /TOC -->
+- [2. install](#2-install)
+- [3. User Interface](#3-user-interface)
+  - [3.1. UI](#31-ui)
+  - [3.2. CLI](#32-cli)
+- [4. build](#4-build)
+  - [4.1. Kubeadm](#41-kubeadm)
+  - [4.2. Kops](#42-kops)
+  - [4.3. Tectonic](#43-tectonic)
+- [5. Image Registry](#5-image-registry)
+- [6. Master Node](#6-master-node)
+  - [6.1. API Server](#61-api-server)
+  - [6.2. Scheduler](#62-scheduler)
+  - [6.3. Controller](#63-controller)
+  - [6.4. etcd](#64-etcd)
+- [7. Worker Node](#7-worker-node)
+  - [7.1. Pod](#71-pod)
+  - [7.2. Docker](#72-docker)
+  - [7.3. Kube-proxy](#73-kube-proxy)
+  - [7.4. Fluentd](#74-fluentd)
+- [8. Kubelet](#8-kubelet)
+- [9. Deployments](#9-deployments)
+- [10. Services](#10-services)
+  - [10.1. ClusterIP](#101-clusterip)
+  - [10.2. NodePort](#102-nodeport)
+  - [10.3. LoadBalancer](#103-loadbalancer)
 
 # 1. Overview
 
-# 2. User Interface
+# 2. install
+```shell
+ Sorry, Kubernetes v1.18.0 requires conntrack to be installed in root's path
+root@nubu:~# sudo apt install conntrack
+$ minikube start --vm-driver=none --registry-mirror=https://registry.docker-cn.com --image-repository=registry.cn-hangzhou.aliyuncs.com/google_containers
+```
 
-## 2.1. UI
+# 3. User Interface
 
-## 2.2. CLI
+## 3.1. UI
 
-# 3. build
+## 3.2. CLI
 
-## 3.1. Kubeadm
+# 4. build
 
-## 3.2. Kops
+## 4.1. Kubeadm
 
-## 3.3. Tectonic
+## 4.2. Kops
 
-# 4. Image Registry
+## 4.3. Tectonic
 
-# 5. Master Node
+# 5. Image Registry
 
-## 5.1. API Server
+# 6. Master Node
 
-## 5.2. Scheduler
+## 6.1. API Server
 
-## 5.3. Controller
+## 6.2. Scheduler
 
-## 5.4. etcd
+## 6.3. Controller
 
-# 6. Worker Node
+## 6.4. etcd
 
-## 6.1. Pod
+# 7. Worker Node
+
+## 7.1. Pod
 
 - 最小调度单位
 
@@ -68,20 +72,20 @@
 
 - 共享一个存储、网络namespace
 
-## 6.2. Docker
+## 7.2. Docker
 
-## 6.3. Kube-proxy
+## 7.3. Kube-proxy
 
-## 6.4. Fluentd
+## 7.4. Fluentd
 
-# 7. Kubelet
+# 8. Kubelet
 
-# 8. Deployments
+# 9. Deployments
 
-# 9. Services
+# 10. Services
 
-## 9.1. ClusterIP
+## 10.1. ClusterIP
 
-## 9.2. NodePort
+## 10.2. NodePort
 
-## 9.3. LoadBalancer
+## 10.3. LoadBalancer
